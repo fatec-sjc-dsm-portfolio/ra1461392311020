@@ -1,0 +1,181 @@
+  <section id="hero" style="background:#232533; min-height:70vh; display:flex; align-items:center; justify-content:center; padding:0 0 40px 0;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Pedro Henrique - Portfólio</title>
+  <style>
+    /* ==== Estilo do Modal ==== */
+    .modal {
+      display: none; /* escondido por padrão */
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.show {
+      display: flex; /* aparece centralizado */
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .close {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-size: 2em;
+      color: #1565c0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="hero" style="background: #232533; min-height:70vh; display:flex; align-items:center; justify-content:center; padding:0 0 40px 0;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:120px; max-width:1200px; width:100%; margin:auto; flex-wrap:wrap;">
+      <div style="flex:1; min-width:320px;">
+        <h1 style="font-size:3.5rem; font-weight:700; color:#fff; margin-bottom:18px;">Pedro Henrique de Souza</h1>
+        <h2 style="font-size:2rem; font-weight:600; color:#fff; margin-bottom:32px;">&lt; DBO /&gt;</h2>
+        <nav style="display:flex; gap:32px; margin-bottom:0;">
+          <a href="#sobre" style="color:#fff; font-size:1.2rem; font-weight:700; text-decoration:none;">Sobre</a>
+          <a href="#projetos" style="color:#fff; font-size:1.2rem; font-weight:700; text-decoration:none;">Projetos</a>
+          <a href="#contato" style="color:#fff; font-size:1.2rem; font-weight:700; text-decoration:none;">Contato</a>
+        </nav>
+      </div>
+      <div style="flex:1; min-width:320px; display:flex; justify-content:center;">
+        <img src="img/eu-inicio.jpg" alt="Avatar" style="width:320px; height:320px; object-fit:cover; border-radius:50%; background:#2ee59d; box-shadow:0 4px 24px rgba(0,0,0,0.3);" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" style="background:#232533; color:#fff; padding:60px 0;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:60px; max-width:1200px; margin:auto; flex-wrap:wrap;">
+      <img src="img/eu-mestre.jpeg" alt="Foto de perfil" style="width:350px; height:350px; object-fit:cover; border-radius:20px; box-shadow:0 4px 24px rgba(0,0,0,0.3); background:#222;" />
+      <div style="max-width:600px;">
+        <h1 style="font-size:3rem; font-weight:700; margin-bottom:24px;">Sobre mim</h1>
+        <p style="font-size:1.2rem; margin-bottom:18px;">Comecei minha jornada na programação em 2022, quando me interessei por python no final do meu ensino médio, de lá pra cá descobri sou um apaixonado por tecnologia e por desenvolvimento de software.</p>
+        <p style="font-size:1.2rem; margin-bottom:18px;">Atualmente estou estudando Tecnologias como: React Native, C, Arduíno, Firebase entre outras tecnologias que uso para criar aplicações web e Back End de alto nível e valor.</p>
+        <p style="font-size:1.2rem; margin-bottom:18px;">Meu foco é aprender novas coisas e aprimorar ainda mais as habilidades que possuo, gosto sempre de estar em constante aprendizado e evoluindo dia após dia, e agregando muito valor.</p>
+        <p style="font-size:1.2rem; margin-bottom:32px;">Curiosidades: Eu pratico Kung-fu desde 2017 e sou faixa marrom, gosto de assistir e jogar basquete, gosto muito de ler e meu livro favorito é Hobbit, atualmente estou com o hobby de fotografia com câmeras analógicas.</p>
+        <a href="#contato" style="display:inline-block; background:#2ee59d; color:#232533; font-weight:700; font-size:1.3rem; padding:18px 48px; border-radius:40px; text-decoration:none; box-shadow:0 2px 12px rgba(46,229,157,0.15); transition:background 0.2s;">Contato</a>
+      </div>
+    </div>
+  </section>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos">
+    <h1>Projetos</h1>
+    <p>Projetos realizados ao longo do curso</p>
+    <div class="projects-container">
+      <div class="project-card" onclick="openModal(1)">
+        <img src="img/API20231.jpeg" alt="Projeto Semestre 1" />
+        <h2>Covidinhos - API 1° Semestre</h2>
+        <p>Projeto desenvolvido para a API (Aprendizagem por Projeto Integrado) do 1° semestre de Desenvolvimento de Software Multiplataforma (DSM) em parceria com a Vanguarda sobre dados relacionados à covid longa no Vale do Paraíba para um site de uso jornalístico.</p>
+      </div>
+      <div class="project-card" onclick="openModal(2)">
+        <img src="img/API20232.jpeg" alt="Projeto Semestre 2" />
+        <h2>CallNet - API 2° Semestre</h2>
+        <p>Projeto desenvolvido para a API (Aprendizagem por Projeto Integrado) do 2° semestre de Desenvolvimento de Software Multiplataforma (DSM). O projeto se refere à um sistema de Gestão de Chamadas de Serviço. A plataforma deve conter informações detalhadas sobre a disponibilização de funcionalidades sobre o planejamento, além do acompanhamento completo e controle no atendimento das chamadas.</p>
+      </div>
+      <div class="project-card" onclick="openModal(3)">
+        <img src="img/API20241.jpeg" alt="Projeto Semestre 3" />
+        <h2>Youtan - API 3° Semestre</h2>
+        <p>Projeto desenvolvido para a API (Aprendizagem por Projeto Integrado) do 3° semestre de Desenvolvimento de Software Multiplataforma (DSM). O objetivo do projeto é o desenvolvimento de uma solução para o gerenciamento de ativos de uma empresa. A plataforma deve conter informações detalhadas sobre ativos, cadastro e histórico de manutenções dos ativos e dashboard com indicativos relevantes sobre os ativos.</p>
+      </div>
+      <div class="project-card" onclick="openModal(4)">
+        <img src="img/API20242.jpeg" alt="Projeto Semestre 4" />
+        <h2>Tecsus - API 4° Semestre</h2>
+        <p>Projeto desenvolvido para a API (Aprendizagem por Projeto Integrado) do 4° semestre de Desenvolvimento de Software Multiplataforma (DSM). O objetivo do projeto é o desenvolvimento de um sistema de coleta de dados de estações meteorológicas. A plataforma deve receber as informações da estação metereológica e em caso de emergência mostrar uma notificação alertando a população.</p>
+      </div>
+      <div class="project-card" onclick="openModal(5)">
+        <img src="img/API20251.jpeg" alt="Projeto Semestre 5" />
+        <h2>Pro4Tech - API 5° Semestre</h2>
+        <p>Projeto desenvolvido para a API (Aprendizagem por Projeto Integrado) do 5° semestre de Desenvolvimento de Software Multiplataforma (DSM). O objetivo do projeto é o desenvolvimento de um sistema para a criação e gerenciamento de agentes de inteligência artificial para o atendimento interno. A plataforma deve receber mensagens do usuário e conseguir interagir com esses agentes inteligentes por meio de um chat inteligente.</p>
+      </div>
+      <div class="project-card" onclick="openModal(6)">
+        <h2>Semestre 6</h2>
+        <p>Descrição do projeto do 6º semestre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pop-up Modal -->
+  <div id="modal-bg" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title" style="color:#1565c0;"></h2>
+      <p id="modal-desc" style="color:#0a2342;"></p>
+    </div>
+  </div>
+
+  <!-- Contato -->
+  <section id="contato" style="background:#232533; color:#fff; min-height:70vh; display:flex; flex-direction:column; justify-content:center;">
+  <div style="display:flex; align-items:center; justify-content:center; gap:510px; max-width:1200px; margin:auto; flex-wrap:wrap;">
+      <div style="flex:1; min-width:320px;">
+        <h1 style="font-size:3rem; font-weight:700; margin-bottom:10px;">Entrar em contato</h1>
+        <p style="font-size:1.4rem; color:#7ed0e6; margin-bottom:40px;">Sinta-se à vontade para entrar em contato!</p>
+        <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:32px;">
+          <a href="mailto:ph9530338@gmail.com" target="_blank" style="display:flex; align-items:center; gap:16px; color:#fff; text-decoration:none; font-size:1.2rem;">
+            <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/email.svg" alt="Email" style="width:32px;"> Email
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5512988243129" target="_blank" style="display:flex; align-items:center; gap:16px; color:#fff; text-decoration:none; font-size:1.2rem;">
+            <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/whatsapp.svg" alt="WhatsApp" style="width:32px;"> WhatsApp
+          </a>
+          <br>
+        </div>
+        <div style="display:flex; gap:24px; margin-top:16px;">
+          <a href="https://www.linkedin.com/in/pedro-henrique-de-souza-128484214" target="_blank"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/linkedin.svg" alt="LinkedIn" style="width:32px;"></a>
+          <a href="https://github.com/pedryn" target="_blank"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/github.svg" alt="GitHub" style="width:32px;"></a>
+          <a href="https://instagram.com/_souza_pedroh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/instagram.svg" alt="Instagram" style="width:32px;"></a>
+        </div>
+      </div>
+      <div style="flex:1; min-width:320px; display:flex; justify-content:center;">
+        <img src="img/eu-telefonico.png" alt="Avatar" style="width:320px; height:320px; object-fit:cover; border-radius:50%; background:#2ee59d; box-shadow:0 4px 24px rgba(0,0,0,0.3);" />
+      </div>
+    </div>
+    <footer style="text-align:center; color:#fff; margin-top:60px; font-size:1.2rem; opacity:0.8;">© 2024 | Pedro Henrique de Souza</footer>
+  </section>
+
+  <script>
+    // Modais dos projetos
+    const modalData = [
+      { title: 'Codificados - Semestre 1', desc: 'Mais informações sobre o projeto do 1º semestre.' },
+      { title: 'Semestre 2', desc: 'Mais informações sobre o projeto do 2º semestre.' },
+      { title: 'Semestre 3', desc: 'Mais informações sobre o projeto do 3º semestre.' },
+      { title: 'Semestre 4', desc: 'Mais informações sobre o projeto do 4º semestre.' },
+      { title: 'Semestre 5', desc: 'Mais informações sobre o projeto do 5º semestre.' },
+      { title: 'Semestre 6', desc: 'Mais informações sobre o projeto do 6º semestre.' }
+    ];
+    function openModal(num) {
+      document.getElementById('modal-title').innerText = modalData[num-1].title;
+      document.getElementById('modal-desc').innerText = modalData[num-1].desc;
+      document.getElementById('modal-bg').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('modal-bg').classList.remove('show');
+    }
+    window.onclick = function(event) {
+      const modalBg = document.getElementById('modal-bg');
+      if (event.target === modalBg) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
