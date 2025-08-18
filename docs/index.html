@@ -117,10 +117,12 @@
 
   <!-- Pop-up Modal -->
   <div id="modal-bg" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modal-title" style="color:#1565c0;"></h2>
-      <p id="modal-desc" style="color:#0a2342;"></p>
+    <div class="modal-content" style="position:relative; display:flex; flex-direction:column; align-items:center; gap:24px;">
+      <span class="close" onclick="closeModal()" style="position:absolute; top:16px; right:24px;">&times;</span>
+      <img id="modal-img" src="" alt="Projeto" style="width:180px; height:180px; object-fit:cover; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.15); background:#eee; margin-bottom:12px;" />
+      <h2 id="modal-title" style="color:#1565c0; text-align:center;"></h2>
+      <p id="modal-desc" style="color:#0a2342; text-align:center;"></p>
+      <div id="modal-tech" style="margin-top:8px; color:#1565c0; font-weight:600; text-align:center;"></div>
     </div>
   </div>
 
@@ -155,16 +157,49 @@
   <script>
     // Modais dos projetos
     const modalData = [
-      { title: 'Codificados - Semestre 1', desc: 'Mais informações sobre o projeto do 1º semestre.' },
-      { title: 'Semestre 2', desc: 'Mais informações sobre o projeto do 2º semestre.' },
-      { title: 'Semestre 3', desc: 'Mais informações sobre o projeto do 3º semestre.' },
-      { title: 'Semestre 4', desc: 'Mais informações sobre o projeto do 4º semestre.' },
-      { title: 'Semestre 5', desc: 'Mais informações sobre o projeto do 5º semestre.' },
-      { title: 'Semestre 6', desc: 'Mais informações sobre o projeto do 6º semestre.' }
+      {
+        title: 'Covidinhos - API 1° Semestre',
+        desc: 'Nosso projeto consiste em um site focado em dados relacionados a Covid-19, seus efeitos e seus sintômas prolongados, ou Covid longa de acordo com a Organização Mundial da Saúde (OMS). Este projeto é destinado à usuários jornalistas da rede Vanguarda com a necessidade de um site de fácil acesso à dados e informações sobre a Covid longa na região do Vale do Paraíba, visando criar novas matérias para o jornal.',
+        img: 'img/API20231.jpeg',
+        tech: 'HTML, CSS, JS, Flask, MySQL'
+      },
+      {
+        title: 'CallNet - API 2° Semestre',
+        desc: 'O sistema desenvolvido, chamado CallNet, é focado em fornecer auxílio aos problemas relacionados a Internet Fixa, e busca aprimorar o sistema de Gerenciamento de Chamadas de Serviço. Nosso objetivo é que nossos clientes tenham acesso à soluções de seus problemas sobre Internet, de forma mais rápida e eficaz.',
+        img: 'img/API20232.jpeg',
+        tech: 'React, TypeORM, Node, MySQL'
+      },
+      {
+        title: 'Youtan - API 3° Semestre',
+        desc: 'O projeto consiste em uma plataforma de gerenciamento de ativos de uma empresa, A plataforma deve conter informações detalhadas sobre ativos, cadastro e histórico de manutenções dos ativos e dashboards com indicativos relevantes sobre os ativos. ',
+        img: 'img/API20241.jpeg',
+        tech: 'React, Java, MySQL'
+      },
+      {
+        title: 'Tecsus - API 4° Semestre',
+        desc: 'Mais informações sobre o projeto do 4º semestre.',
+        img: 'img/API20242.jpeg',
+        tech: 'React, Node, Firebase, Flask, C'
+      },
+      {
+        title: 'Pro4Tech - API 5° Semestre',
+        desc: 'Mais informações sobre o projeto do 5º semestre.',
+        img: 'img/API20251.jpeg',
+        tech: 'Node, React Native, MySQL, Firebase'
+      },
+      {
+        title: 'Semestre 6',
+        desc: 'Mais informações sobre o projeto do 6º semestre.',
+        img: '',
+        tech: 'Tecnologias a definir'
+      }
     ];
     function openModal(num) {
-      document.getElementById('modal-title').innerText = modalData[num-1].title;
-      document.getElementById('modal-desc').innerText = modalData[num-1].desc;
+      const data = modalData[num-1];
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-desc').innerText = data.desc;
+      document.getElementById('modal-img').src = data.img || 'https://via.placeholder.com/180x180?text=Sem+Imagem';
+      document.getElementById('modal-tech').innerText = 'Tecnologias utilizadas: ' + (data.tech || 'N/A');
       document.getElementById('modal-bg').classList.add('show');
     }
     function closeModal() {
